@@ -3,20 +3,24 @@ extends KinematicBody2D
 onready var SM = $StateMachine
 onready var VP = get_viewport_rect()
 
+onready var global = get_node("/root/Global")
+onready var HUD = get_node("/root/Game/CanvasLayer/HUD")
+
+
 var velocity = Vector2.ZERO
 var jump_power = Vector2.ZERO
 var direction = 1
 
 export var gravity = Vector2(0,30)
 
-export var move_speed = 20
-export var max_move = 300
+export var move_speed = 10
+export var max_move = 150
 
-export var jump_speed = 100
-export var max_jump = 1000
+export var jump_speed = 75
+export var max_jump = 580
 
-export var leap_speed = 100
-export var max_leap = 1000
+export var leap_speed = 75
+export var max_leap = 575
 
 var moving = false
 var is_jumping = false
@@ -33,6 +37,7 @@ func _physics_process(_delta):
 	if direction > 0 and $AnimatedSprite.flip_h: $AnimatedSprite.flip_h = false
 	
 	if position.y > Global.death_zone:
+		HUD.update_lives(-1)
 		queue_free()
 		
 
@@ -56,4 +61,8 @@ func set_animation(anim):
 	else: $AnimatedSprite.play()
 
 func die():
+	HUD.update_lives(-1)
 	queue_free()
+
+
+

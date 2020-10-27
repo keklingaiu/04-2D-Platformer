@@ -1,7 +1,12 @@
 extends Node
 
+
+
+
 var fade = null
 var fade_speed = 0.015
+var lives = 3
+var score = 0
 
 var fade_in = false
 var fade_out = ""
@@ -15,6 +20,10 @@ func _physics_process(_delta):
 		execute_fade_out(fade_out)
 	if fade_in:
 		execute_fade_in()
+		
+func reset():
+	lives = 3
+	score = 0
 		
 
 func start_fade_in():
@@ -46,3 +55,6 @@ func execute_fade_out(target):
 func _unhandled_input(event):
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
+		
+	
+
