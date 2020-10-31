@@ -47,7 +47,9 @@ extents = Vector2( 12.4868, 10.5194 )
 [sub_resource type="CircleShape2D" id=9]
 radius = 14.3103
 
-[node name="Enemy_Ground" type="KinematicBody2D"]
+[node name="Enemy_Ground" type="KinematicBody2D" groups=[
+"Enemy_Ground",
+]]
 position = Vector2( 698.927, 439.112 )
 scale = Vector2( 2, 2 )
 collision_layer = 3
