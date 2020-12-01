@@ -16,4 +16,4 @@ func _on_Exit_body_entered(body):
 			get_tree().change_scene(Global.levels[Global.level])
 		else:
 			global.score += 200
-			get_tree().change_scene("res://Levels/Game_Over.tscn")
+			get_tree().change_scene("res://Menu/GameOver.tscn")

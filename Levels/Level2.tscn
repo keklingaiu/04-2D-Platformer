@@ -556,7 +556,7 @@ limit_right = 3760
 limit_bottom = 600
 
 [node name="Player" parent="Player_Container" instance=ExtResource( 20 )]
-position = Vector2( 52.1289, 169.917 )
+position = Vector2( 54.5, 178 )
 
 [node name="Enemy_Container" type="Node2D" parent="."]
 script = ExtResource( 12 )
